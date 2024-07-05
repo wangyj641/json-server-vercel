@@ -12,7 +12,7 @@ const server = jsonServer.create()
 // const router = jsonServer.router(db)
 
 // Comment out to allow write operations
-const router = jsonServer.router('db.json')
+const router = jsonServer.router('gotour-db.json')
 
 const middlewares = jsonServer.defaults()
 
@@ -23,8 +23,8 @@ server.use(jsonServer.rewriter({
     '/blog/:resource/:id/show': '/:resource/:id'
 }))
 server.use(router)
-server.listen(3000, () => {
-    console.log('JSON Server is running')
+server.listen(5000, () => {
+    console.log('JSON Server is running on port 5000...')
 })
 
 // Export the Server API
